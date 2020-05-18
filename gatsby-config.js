@@ -5,15 +5,15 @@ const parseNewLines = function (key) {
 const privateKey = parseNewLines(process.env.FIREBASE_PRIVATE_KEY)
 module.exports = {
     siteMetadata: {
-        title: `Gatsby Starter Blog`,
+        title: `dan13ram`,
         author: {
-            name: `Kyle Mathews`,
-            summary: `who lives and works in San Francisco building useful things.`
+            name: `Dhanwanthari Ramakrishnan`,
+            summary: `Coder & Artist`
         },
-        description: `A starter blog demonstrating what Gatsby can do.`,
-        siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+        description: `Personal blog and portfolio`,
+        siteUrl: `https://dan13ram.com/`,
         social: {
-            twitter: `kylemathews`
+            twitter: `dan13ram`
         }
     },
     plugins: [

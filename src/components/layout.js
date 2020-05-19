@@ -3,33 +3,20 @@ import { Link } from "gatsby";
 import "../scss/layout.scss";
 
 const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`;
-  let header;
-
-  if (location.pathname === rootPath) {
-    header = (
-      <h1>
-        <Link to={`/`}>{title}</Link>
-      </h1>
+    //const rootPath = `${__PATH_PREFIX__}/`;
+    //if (location.pathname === rootPath) {
+    return (
+        <div className="layout">
+            <header className="header">
+                <Link to={`/`}>{title}</Link>
+            </header>
+            <main>{children}</main>
+            <footer className="footer">
+                Copyright © {new Date().getFullYear()}{" "}
+                <Link to={`/`}>dan13ram</Link>.
+            </footer>
+        </div>
     );
-  } else {
-    header = (
-      <h3>
-        <Link to={`/`}>{title}</Link>
-      </h3>
-    );
-  }
-  return (
-    <div className="layout">
-      <header>{header}</header>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
-    </div>
-  );
 };
 
 export default Layout;

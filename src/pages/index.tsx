@@ -1,61 +1,47 @@
 // Gatsby supports TypeScript natively!
-import React from "react"
-import { PageProps, Link, graphql } from "gatsby"
+import React from "react";
+import { PageProps, Link, graphql } from "gatsby";
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import Bio from "../components/bio";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
 type Data = {
     site: {
         siteMetadata: {
-            title: string
-        }
-    }
+            title: string;
+        };
+    };
     allMarkdownRemark: {
         edges: {
             node: {
-                excerpt: string
+                excerpt: string;
                 frontmatter: {
-                    title: string
-                    date: string
-                    description: string
-                }
-                fields: {
-                    slug: string
-                }
-            }
-        }[]
-    }
-}
+                    title: string;
+                    date: string;
+                    description: string;
+                    slug: string;
+                };
+            };
+        }[];
+    };
+};
 
 const BlogIndex = ({ data, location }: PageProps<Data>) => {
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
+    const siteTitle = data.site.siteMetadata.title;
+    const posts = data.allMarkdownRemark.edges;
 
     return (
         <Layout location={location} title={siteTitle}>
             <SEO title="All posts" />
-            <h1>{data.allFlamelinkPostContent.edges[0].node.title}</h1>
-            <h2>{data.allFlamelinkPostContent.edges[0].node.content}</h2>
             <Bio />
             {posts.map(({ node }) => {
-                const title = node.frontmatter.title || node.fields.slug
+                const title = node.frontmatter.title || node.frontmatter.slug;
                 return (
-                    <article key={node.fields.slug}>
+                    <article key={node.frontmatter.slug}>
                         <header>
-                            <h3
-                                style={{
-                                    marginBottom: rhythm(1 / 4)
-                                }}
-                            >
-                                <Link
-                                    style={{ boxShadow: `none` }}
-                                    to={node.fields.slug}
-                                >
-                                    {title}
-                                </Link>
+                            <h3>
+                                <Link to={node.frontmatter.slug}>{title}</Link>
                             </h3>
                             <small>{node.frontmatter.date}</small>
                         </header>
@@ -69,13 +55,13 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                             />
                         </section>
                     </article>
-                )
+                );
             })}
         </Layout>
-    )
-}
+    );
+};
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
     query {
@@ -84,28 +70,18 @@ export const pageQuery = graphql`
                 title
             }
         }
-        allFlamelinkPostContent {
-            edges {
-                node {
-                    title
-                    content
-                }
-            }
-        }
         allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
             edges {
                 node {
                     excerpt
-                    fields {
-                        slug
-                    }
                     frontmatter {
                         date(formatString: "MMMM DD, YYYY")
                         title
                         description
+                        slug
                     }
                 }
             }
         }
     }
-`
+`;

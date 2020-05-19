@@ -71,3 +71,7 @@ yarn-error.log
 
 # vim swp files
 *.swp
+
+# firebase hosting
+*.log
+.firebase/

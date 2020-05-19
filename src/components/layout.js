@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import "../scss/layout.scss";
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
@@ -19,7 +20,7 @@ const Layout = ({ location, title, children }) => {
     );
   }
   return (
-    <div>
+    <div className="layout">
       <header>{header}</header>
       <main>{children}</main>
       <footer>

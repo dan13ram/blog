@@ -14,8 +14,6 @@ import twitterOutlined from '@iconify/icons-ant-design/twitter-outlined';
 import linkedinOutlined from '@iconify/icons-ant-design/linkedin-outlined';
 
 
-
-
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {

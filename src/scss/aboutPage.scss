@@ -1,0 +1,27 @@
+.aboutPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40rem;
+    max-width: 95vw;
+    .avatar {
+        border-radius: 50%;
+        img {
+            width: 10rem;
+        }
+    }
+    .follow-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a {
+            text-decoration: none;
+            font-size: 2rem;
+            color: black;
+            &:hover {
+                color: grey;
+            }
+        }
+    }
+}

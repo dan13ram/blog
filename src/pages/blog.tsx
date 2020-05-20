@@ -6,6 +6,8 @@ import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
+import "../scss/blogPage.scss";
+
 type Data = {
     site: {
         siteMetadata: {
@@ -27,40 +29,45 @@ type Data = {
     };
 };
 
-const BlogIndex = ({ data, location }: PageProps<Data>) => {
+const BlogPage = ({ data, location }: PageProps<Data>) => {
     const siteTitle = data.site.siteMetadata.title;
     const posts = data.allMarkdownRemark.edges;
 
     return (
         <Layout location={location} title={siteTitle}>
             <SEO title="Blog" />
-            {posts.map(({ node }) => {
-                const title = node.frontmatter.title || node.frontmatter.slug;
-                return (
-                    <article key={node.frontmatter.slug}>
-                        <header>
-                            <h3>
-                                <Link to={node.frontmatter.slug}>{title}</Link>
-                            </h3>
-                            <small>{node.frontmatter.date}</small>
-                        </header>
-                        <section>
-                            <p
-                                dangerouslySetInnerHTML={{
-                                    __html:
-                                        node.frontmatter.description ||
-                                        node.excerpt
-                                }}
-                            />
-                        </section>
-                    </article>
-                );
-            })}
+            <div className="blogPage">
+                {posts.map(({ node }) => {
+                    const title =
+                        node.frontmatter.title || node.frontmatter.slug;
+                    return (
+                        <article key={node.frontmatter.slug}>
+                            <header>
+                                <h3>
+                                    <Link to={node.frontmatter.slug}>
+                                        {title}
+                                    </Link>
+                                </h3>
+                                <small>{node.frontmatter.date}</small>
+                            </header>
+                            <section>
+                                <p
+                                    dangerouslySetInnerHTML={{
+                                        __html:
+                                            node.frontmatter.description ||
+                                            node.excerpt
+                                    }}
+                                />
+                            </section>
+                        </article>
+                    );
+                })}
+            </div>
         </Layout>
     );
 };
 
-export default BlogIndex;
+export default BlogPage;
 
 export const pageQuery = graphql`
     query {

@@ -33,8 +33,8 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
 
     return (
         <Layout location={location} title={siteTitle}>
-            <SEO title="Home" />
-            Welcome to my website.
+            <SEO title="About" />
+            <Bio />
         </Layout>
     );
 };

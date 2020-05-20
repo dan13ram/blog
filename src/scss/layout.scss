@@ -1,9 +1,53 @@
 .layout {
-    .header, .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    .header {
+        z-index: 10;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
         display: flex;
         height: 3rem;
-        background: lightgrey;
-        color: black;
+        background: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        a {
+            padding: 0.5rem;
+            font-size: 1rem;
+            text-decoration: none;
+            color: white;
+            &:hover {
+                color: grey;
+            }
+        }
     }
+    .main {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3rem;
+    }
+    .footer {
+        display: flex;
+        height: 3rem;
+        background: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        a {
+            padding: 0.5rem;
+            font-size: 1rem;
+            text-decoration: none;
+            color: white;
+            &:hover {
+                color: grey;
+            }
+        }
+    }
+
 
 }

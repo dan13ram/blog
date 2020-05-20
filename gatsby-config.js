@@ -14,6 +14,8 @@ module.exports = {
     siteUrl: `https://dan13ram.com/`,
     social: {
       twitter: `dan13ram`,
+      linkedIn: `dan13ram`,
+      instagram: `dan13ram`
     },
   },
   plugins: [

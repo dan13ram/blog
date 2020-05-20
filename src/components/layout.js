@@ -9,11 +9,17 @@ const Layout = ({ location, title, children }) => {
         <div className="layout">
             <header className="header">
                 <Link to={`/`}>{title}</Link>
+                <div className="nav-links">
+                    <Link to={`/blog`}>blog</Link>
+                    <Link to={`/work`}>work</Link>
+                    <Link to={`/art`}>art</Link>
+                    <Link to={`/about`}>about</Link>
+                </div>
             </header>
-            <main>{children}</main>
+            <main className="main">{children}</main>
             <footer className="footer">
                 Copyright © {new Date().getFullYear()}{" "}
-                <Link to={`/`}>dan13ram</Link>.
+                <Link to={`/`}>dan13ram</Link>
             </footer>
         </div>
     );

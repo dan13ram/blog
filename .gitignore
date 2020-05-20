@@ -75,3 +75,6 @@ yarn-error.log
 # firebase hosting
 *.log
 .firebase/
+
+# ctags
+tags

@@ -20,11 +20,11 @@ const Layout = ({ location, children }) => {
             <header className={open?"header open":"header"}>
                 <Link className="title" to={`/`}>{data.site.siteMetadata.title}</Link>
                 <div className="nav-links">
-                    <Link to={`/`}>home</Link>
-                    <Link to={`/blog`}>blog</Link>
-                    <Link to={`/work`}>work</Link>
-                    <Link to={`/art`}>art</Link>
-                    <Link to={`/about`}>about</Link>
+                    <Link to={`/`} onClick={() => {toggleOpen(open => !open)}}>home</Link>
+                    <Link to={`/blog`} onClick={() => {toggleOpen(open => !open)}}>blog</Link>
+                    <Link to={`/work`} onClick={() => {toggleOpen(open => !open)}}>work</Link>
+                    <Link to={`/art`} onClick={() => {toggleOpen(open => !open)}}>art</Link>
+                    <Link to={`/about`} onClick={() => {toggleOpen(open => !open)}}>about</Link>
                 </div>
                 <button className="nav-toggle" onClick={() => {toggleOpen(open => !open)}}>
                     {open? "\u00D7": "\u2630"}

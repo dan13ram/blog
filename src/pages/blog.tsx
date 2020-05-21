@@ -41,24 +41,25 @@ const BlogPage = ({ data, location }: PageProps<Data>) => {
                     const title =
                         node.frontmatter.title || node.frontmatter.slug;
                     return (
-                        <article key={node.frontmatter.slug}>
-                            <header>
-                                <h3>
-                                    <Link to={node.frontmatter.slug}>
-                                        {title}
-                                    </Link>
-                                </h3>
-                                <small>{node.frontmatter.date}</small>
-                            </header>
-                            <section>
-                                <p
-                                    dangerouslySetInnerHTML={{
-                                        __html:
-                                            node.frontmatter.description ||
-                                            node.excerpt
-                                    }}
-                                />
-                            </section>
+                        <article
+                            className="blogTile tile"
+                            key={node.frontmatter.slug}
+                        >
+                            <Link to={node.frontmatter.slug}>
+                                <header>
+                                    <h3>{title}</h3>
+                                    <small>{node.frontmatter.date}</small>
+                                </header>
+                                <section>
+                                    <p
+                                        dangerouslySetInnerHTML={{
+                                            __html:
+                                                node.frontmatter.description ||
+                                                node.excerpt
+                                        }}
+                                    />
+                                </section>
+                            </Link>
                         </article>
                     );
                 })}

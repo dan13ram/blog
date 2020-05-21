@@ -44,14 +44,13 @@
         .nav-toggle {
             position: absolute;
             right: 0;
-            top: 0;
+            top: 0.25rem;
             display: none;
             justify-content: center;
             align-items: center;
             background: none;
             border: none;
             font-size: 2rem;
-            padding-bottom: 0.5rem;
             color: white;
             &:hover {
                 color: grey;

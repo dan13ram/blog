@@ -28,24 +28,24 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </footer>
       </article>
 
-      <nav>
-        <ul>
-          <li>
-            {previous && (
-              <Link to={previous.frontmatter.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.frontmatter.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+      {/* <nav> */}
+      {/*   <ul> */}
+      {/*     <li> */}
+      {/*       {previous && ( */}
+      {/*         <Link to={previous.frontmatter.slug} rel="prev"> */}
+      {/*           ← {previous.frontmatter.title} */}
+      {/*         </Link> */}
+      {/*       )} */}
+      {/*     </li> */}
+      {/*     <li> */}
+      {/*       {next && ( */}
+      {/*         <Link to={next.frontmatter.slug} rel="next"> */}
+      {/*           {next.frontmatter.title} → */}
+      {/*         </Link> */}
+      {/*       )} */}
+      {/*     </li> */}
+      {/*   </ul> */}
+      {/* </nav> */}
     </Layout>
   );
 };

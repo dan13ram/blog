@@ -6,6 +6,7 @@
     min-height: 100vh;
     flex-direction: column;
     align-items: stretch;
+    justify-content: space-between;
     .header {
         position: fixed;
         display: flex;
@@ -44,7 +45,7 @@
         .nav-toggle {
             position: absolute;
             right: 0;
-            top: 0.25rem;
+            top: 0;
             display: none;
             justify-content: center;
             align-items: center;
@@ -67,6 +68,7 @@
         padding: 1rem 0 1rem 0;
     }
     .footer {
+        align-self: flex-end;
         width: 100vw;
         display: flex;
         height: 3rem;
